@@ -1,20 +1,16 @@
 import './App.css';
-import RegisterForm from "./components/RegisterForm/AttenderForm";
-import {useState} from "react";
 import {Button} from "antd";
-import {useNavigate} from "react-router-dom";
+// import {useNavigate} from "react-router-dom";
 
 function App() {
-    const [showAddNew, setShowAddNew] = useState(false)
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     return (
         <div className="container">
             <img src={'./assets/banner.jpeg'} alt="banner" style={{width: '100%'}}/>
 
             <div>
                 <h2>ASCEND TECHTALK 2022 CHÍNH THỨC KHỞI ĐỘNG!
-                    <Button type={'link'} style={{paddingLeft: 5}}
-                            onClick={() => setShowAddNew(true)}>
+                    <Button type={'link'} style={{paddingLeft: 5}}>
                         <h2 style={{color: '#1890ff', padding: 0}}>HÃY ĐĂNG KÍ NGAY!</h2>
                     </Button>
                 </h2>
@@ -38,30 +34,16 @@ function App() {
                     phố Thái Hà, phường Láng Hạ, quận Đống Đa, thành phố Hà Nội.</p>
                 <p>📋 Đăng kí tham gia Ascend TechTalk 2022 tại link:
                     <Button type={'link'}
-                            onClick={() =>
-                                setShowAddNew(true)
-                            }
                             style={{fontWeight: 'bold', padding: 5}}>
                         Đăng ký tham gia
                     </Button>
                     <Button type={'link'}
-                            onClick={() =>navigate("attenders")}
                             style={{fontWeight: 'bold', color: '#d136f3', padding: 5}}>
                         Danh sách người tham gia
                     </Button>
                 </p>
                 <p>🗓 <b>Thời hạn đăng kí</b>: 23h59, 15/09/2022</p>
             </div>
-
-            <RegisterForm
-                show={showAddNew}
-                onOk={() => {
-                    setShowAddNew(false)
-                    navigate('add-success')
-                }}
-                onCancel={() => {
-                    setShowAddNew(false)
-                }}/>
         </div>
     );
 }
