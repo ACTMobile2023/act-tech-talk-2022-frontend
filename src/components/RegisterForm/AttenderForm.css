@@ -1,0 +1,10 @@
+.avatar-container {
+    border: 1px solid;
+    border-radius: 50px;
+    width: 90px;
+    height: 90px
+}
+.avatar-uploader {
+    justify-content: center;
+    display: flex !important;
+}
