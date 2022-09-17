@@ -113,6 +113,7 @@ export default function AttenderForm(props) {
                   wrapperCol={{span: 17}}
                   autoComplete="off">
                 <Upload
+                    name="avatar"
                     className="avatar-uploader"
                     listType={'picture-card'}
                     showUploadList={false}
