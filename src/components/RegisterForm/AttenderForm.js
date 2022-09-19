@@ -112,26 +112,26 @@ export default function AttenderForm(props) {
                   labelCol={{span: 7}}
                   wrapperCol={{span: 17}}
                   autoComplete="off">
-                <Form.Item name="avatar" className="avatar-uploader">
-                    <Upload
-                        listType={'picture-card'}
-                        showUploadList={false}
-                        beforeUpload={event => {
-                            getBase64(event).then(base64 => {
-                                setAvatar(base64)
-                            });
-                        }}
-                    >
-                        {avatar ?
-                            <img src={avatar} alt="avatar"
-                                 style={{maxHeight: 120, width: '100%'}}/> :
-                            <div>
-                                <PlusOutlined/>
-                                <div style={{marginTop: 8}}>Upload avatar</div>
-                            </div>
-                        }
-                    </Upload>
-                </Form.Item>
+                <Upload
+                    id="avatar"
+                    className="avatar-uploader"
+                    listType={'picture-card'}
+                    showUploadList={false}
+                    beforeUpload={event => {
+                        getBase64(event).then(base64 => {
+                            setAvatar(base64)
+                        });
+                    }}
+                >
+                    {avatar ?
+                        <img src={avatar} alt="avatar"
+                             style={{maxHeight: 120, width: '100%'}}/> :
+                        <div>
+                            <PlusOutlined/>
+                            <div style={{marginTop: 8}}>Upload avatar</div>
+                        </div>
+                    }
+                </Upload>
 
                 <Divider/>
                 <Form.Item
